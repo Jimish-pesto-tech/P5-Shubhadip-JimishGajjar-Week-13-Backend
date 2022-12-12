@@ -10,7 +10,7 @@ exports.getCureentWeather = async (req, res) => {
 
     res.status(200).json(weatherData);
   } catch (error) {
-    res.status(500).json(error.message);
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -22,6 +22,6 @@ exports.getForcast = async (req, res) => {
     let weatherData = await forcastService(search, days);
     res.status(200).json(weatherData);
   } catch (error) {
-    res.status(500).json(error.message);
+    res.status(500).json({ error: error.message });
   }
 };

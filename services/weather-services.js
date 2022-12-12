@@ -8,7 +8,7 @@ exports.cureentWeatherService = async (search) => {
     let data = await response.json();
     return data;
   } catch (error) {
-    return json(error.message);
+    return json({ error: error.message });
   }
 };
 
@@ -20,6 +20,6 @@ exports.forcastService = async (search, days) => {
     let data = await response.json();
     return data;
   } catch (error) {
-    return json(error.message);
+    return json({ error: error.message });
   }
 };
